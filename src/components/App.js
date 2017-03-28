@@ -10,6 +10,7 @@ class App extends Component {
       modalType,
       showModal,
       currentContactId,
+      contact,
       openModal,
       closeModal,
       addContact,
@@ -28,6 +29,7 @@ class App extends Component {
           modalType={modalType}
           showModal={showModal}
           currentContactId={currentContactId}
+          contact={contact}
           closeModal={closeModal}
           addContact={addContact}
           editContact={editContact}

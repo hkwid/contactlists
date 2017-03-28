@@ -17,7 +17,8 @@ function mapStateToProps(state) {
     contactLists: state.contact.contactLists,
     modalType: state.modal.modalType,
     showModal: state.modal.showModal,
-    currentContactId: state.modal.currentContactId
+    currentContactId: state.modal.currentContactId,
+    contact: state.form.contact
   }
 }
 
