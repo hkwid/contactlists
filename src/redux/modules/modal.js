@@ -5,14 +5,16 @@ const CLOSE_MODAL = 'CLOSE_MODAL';
 // Initial State
 const initialState = {
   modalType: 'add',
-  showModal: false
+  showModal: false,
+  currentContactId: 0
 };
 
 //Action Creators
-export function openModal(modalType){
+export function openModal(modalType, currentContactId){
   return {
     type: OPEN_MODAL,
-    modalType
+    modalType,
+    currentContactId
   }
 };
 
@@ -32,7 +34,8 @@ export default function reducer(state = initialState, action){
       state,
       {
         modalType: action.modalType,
-        showModal: true
+        showModal: true,
+        currentContactId: action.currentContactId
       }
     );
 

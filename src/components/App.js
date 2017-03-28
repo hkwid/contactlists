@@ -9,8 +9,12 @@ class App extends Component {
       contactLists,
       modalType,
       showModal,
+      currentContactId,
       openModal,
-      closeModal
+      closeModal,
+      addContact,
+      editContact,
+      deleteContact
     } = this.props;
 
     return (
@@ -22,7 +26,11 @@ class App extends Component {
         <ContactListModal
           modalType={modalType}
           showModal={showModal}
+          currentContactId={currentContactId}
           closeModal={closeModal}
+          addContact={addContact}
+          editContact={editContact}
+          deleteContact={deleteContact}
         />
       </div>
     );

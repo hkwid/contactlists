@@ -50,7 +50,7 @@ export default function reducer(state = initialState, action){
       {},
       state,
       {
-        conatctLists: [
+        contactLists: [
           ...state.contactLists.slice(0, action.index),
           Object.assign({}, state.contactLists[action.index], action.contact),
           ...state.contactLists.slice(action.index + 1)
@@ -63,7 +63,7 @@ export default function reducer(state = initialState, action){
       {},
       state,
       {
-        conatctLists: [
+        contactLists: [
           ...state.contactLists.slice(0, action.index),
           ...state.contactLists.slice(action.index + 1)
         ]

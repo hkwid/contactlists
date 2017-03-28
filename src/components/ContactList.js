@@ -20,20 +20,20 @@ class ContactList extends Component {
                 <button type="button" onClick={() => openModal('add')}>Add</button>
               </th>
               <th>
-                <button>Sort</button>
+                <button type="button" onClick={() => openModal('sort')}>Sort</button>
               </th>
             </tr>
           </thead>
           <tbody className="ContactListBody">
-            {contactLists.map(contact =>
+            {contactLists.map((contact, index) =>
               <tr className="" key={contact._id}>
                 <td>{contact.firstName}</td>
                 <td>{contact.lastName}</td>
                 <td>{contact.phone}</td>
                 <td>{contact.address}</td>
                 <td>{contact.email}</td>
-                <td><button type="button" onClick={() => openModal('edit')}>Edit</button></td>
-                <td><button>Delete</button></td>
+                <td><button type="button" onClick={() => openModal('edit', index)}>Edit</button></td>
+                <td><button type="button" onClick={() => openModal('delete', index)}>Delete</button></td>
               </tr>
             )}
           </tbody>

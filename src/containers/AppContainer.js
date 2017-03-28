@@ -16,7 +16,8 @@ function mapStateToProps(state) {
   return {
     contactLists: state.contact.contactLists,
     modalType: state.modal.modalType,
-    showModal: state.modal.showModal
+    showModal: state.modal.showModal,
+    currentContactId: state.modal.currentContactId
   }
 }
 
@@ -25,7 +26,7 @@ function mapDispatchToProps(dispatch) {
     addContact: (contact) => dispatch(addContact(contact)),
     editContact: (index, contact) => dispatch(editContact(index, contact)),
     deleteContact: (index) => dispatch(deleteContact(index)),
-    openModal: (modalType) => dispatch(openModal(modalType)),
+    openModal: (modalType, index) => dispatch(openModal(modalType, index)),
     closeModal: () => dispatch(closeModal())
   }
 }
