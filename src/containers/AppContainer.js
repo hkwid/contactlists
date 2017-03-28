@@ -18,7 +18,8 @@ function mapStateToProps(state) {
     modalType: state.modal.modalType,
     showModal: state.modal.showModal,
     currentContactId: state.modal.currentContactId,
-    contact: state.form.contact
+    contact: state.form.contact,
+    sortFiled: state.form.sortFiled
   }
 }
 

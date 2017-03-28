@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal';
 import ContactForm from './ContactForm';
+import SortForm from './SortForm';
 
 class ContactListModal extends Component {
   onAddHandler = (contact) => {
@@ -72,17 +73,12 @@ class ContactListModal extends Component {
           </div>
         );
         break;
+
       case 'sort':
         modalContent = (
           <div>
             <p>Sort by</p>
-            <form>
-              <input type="radio" name="sort" value="firstName" checked /> First Name<br/>
-              <input type="radio" name="sort" value="lastName" /> Last Name<br/>
-              <input type="radio" name="sort" value="phone" /> PhoneNumber<br/>
-              <input type="radio" name="sort" value="address" /> Address<br/>
-              <input type="radio" name="sort" value="email" /> Email<br/>
-            </form>
+            <SortForm/>
             <button onClick={() => {onCancelHander();}}>Cancel</button>
             <button onClick={() => {onCancelHander();}}>Sort</button>
           </div>
