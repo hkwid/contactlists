@@ -26,7 +26,7 @@ class ContactList extends Component {
           </thead>
           <tbody className="ContactListBody">
             {contactLists.map((contact, index) =>
-              <tr className="" key={contact._id}>
+              <tr className="" key={`contact-${index}`}>
                 <td>{contact.firstName}</td>
                 <td>{contact.lastName}</td>
                 <td>{contact.phone}</td>
