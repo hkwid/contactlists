@@ -38,6 +38,7 @@ For the project to build, **these files must exist with exact filenames**:
 
 * `public/index.html` is the page template;
 * `src/index.js` is the JavaScript entry point.
+* `src/redux` is following [ducks](https://github.com/erikras/ducks-modular-redux) structure
 
 ## Available Scripts
 
@@ -53,8 +54,7 @@ You will also see any lint errors in the console.
 
 ### `npm test`
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](#running-tests) for more information.
+Launches the test runner in the interactive watch mode.
 
 ### `npm run build`
 
@@ -63,9 +63,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
-
-See the section about [deployment](#deployment) for more information.
-
 
 ## Dummy data
 
