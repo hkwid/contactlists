@@ -24,6 +24,7 @@ class App extends Component {
           openModal={openModal}
         />
         <ContactListModal
+          contactLists={contactLists}
           modalType={modalType}
           showModal={showModal}
           currentContactId={currentContactId}

@@ -25,6 +25,7 @@ class ContactListModal extends Component {
 
   render() {
     const {
+      contactLists,
       modalType,
       showModal,
       currentContactId
@@ -38,6 +39,7 @@ class ContactListModal extends Component {
     } = this;
 
     let modalContent = '';
+    const currentContact = contactLists[currentContactId];
 
     switch(modalType) {
       case 'add':
@@ -55,7 +57,7 @@ class ContactListModal extends Component {
           <div>
             <ContactForm />
             <button onClick={() => {onCancelHander();}}>Cancel</button>
-            <button onClick={() => {onEditHandler();}}>Edit</button>
+            <button onClick={() => {onEditHandler(currentContactId);}}>Edit</button>
           </div>
         );
         break;
@@ -64,6 +66,7 @@ class ContactListModal extends Component {
         modalContent = (
           <div>
             <p>Are you sure to delete this contact?</p>
+            <p>{`${currentContact.firstName} ${currentContact.lastName}`}</p>
             <button onClick={() => {onCancelHander();}}>Cancel</button>
             <button onClick={() => {onDeleteHandler(currentContactId);}}>Delete</button>
           </div>
