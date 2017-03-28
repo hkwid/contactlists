@@ -1,0 +1,28 @@
+.ContactListWrap {
+  margin: 30px;
+}
+
+.ContactList {
+  text-align: left;
+}
+
+.ContactListHead {
+  background-color: #cfd8dc;
+}
+
+.ContactListHead th {
+  padding: 10px;
+}
+
+.ContactListBody {
+  height: 200px;
+  overflow: scroll;
+  border-collapse: collapse;
+  border-spacing: 0px;
+  table-layout: fixed;
+}
+
+.ContactListBody tr td {
+  padding: 10px;
+  border-bottom: 2px solid #cfd8dc;
+}
