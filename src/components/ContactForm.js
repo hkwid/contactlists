@@ -1,36 +1,47 @@
 import React, { Component } from 'react';
+import { Field, reduxForm } from 'redux-form';
 
 class ContactForm extends Component {
 
   render() {
-    const {
-      firstName,
-      lastName,
-      phone,
-      address,
-      email
-    } = this.props;
-
     return (
       <form>
-        <span className="formLabel">First name:</span>
-        <input type="text" name="firstname" value={firstName} />
-        <br />
-        <span className="formLabel">Last name:</span>
-        <input type="text" name="lastname" value={lastName} />
-        <br />
-        <span className="formLabel">Phone Number:</span>
-        <input type="text" name="phone" value={phone} />
-        <br />
-        <span className="formLabel">Address:</span>
-        <input type="text" name="address" value={address} />
-        <br />
-        <span className="formLabel">Email:</span>
-        <input type="text" name="email" value={email} />
-        <br />
+        <div>
+          <label htmlFor="firstName">First Name:</label>
+          <Field
+            name="firstName"
+            component="input"
+            type="text"
+          />
+        </div>
+        <div>
+          <label htmlFor="lastName">Last Name:</label>
+          <Field
+            name="lastName"
+            component="input"
+            type="text"
+          />
+        </div>
+        <div>
+          <label htmlFor="phone">Phone:</label>
+          <Field name="phone" component="input" type="text" />
+        </div>
+        <div>
+          <label htmlFor="address">Address:</label>
+          <Field name="address" component="input" type="text" />
+        </div>
+        <div>
+          <label htmlFor="email">Email:</label>
+          <Field name="email" component="input" type="text" />
+        </div>
       </form>
     );
   }
 }
+
+// Decorate the form component
+ContactForm = reduxForm({
+  form: 'contact'
+})(ContactForm);
 
 export default ContactForm;

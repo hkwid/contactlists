@@ -44,7 +44,8 @@ export default function reducer(state = initialState, action){
       {},
       state,
       {
-        showModal: false
+        showModal: false,
+        currentContactId: 0
       }
     );
 

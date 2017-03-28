@@ -54,7 +54,6 @@ export default function reducer(state = initialState, action){
           ...state.contactLists.slice(0, action.index),
           Object.assign({}, state.contactLists[action.index], action.contact),
           ...state.contactLists.slice(action.index + 1)
-
         ]
       }
     );

@@ -28,7 +28,8 @@ class ContactListModal extends Component {
       contactLists,
       modalType,
       showModal,
-      currentContactId
+      currentContactId,
+      contact
     } = this.props;
 
     const {
@@ -47,7 +48,7 @@ class ContactListModal extends Component {
           <div>
             <ContactForm />
             <button onClick={() => {onCancelHander()}}>Cancel</button>
-            <button onClick={() => {onAddHandler()}}>Add</button>
+            <button onClick={() => {onAddHandler(contact.values)}}>Add</button>
           </div>
         );
         break;
@@ -57,7 +58,7 @@ class ContactListModal extends Component {
           <div>
             <ContactForm />
             <button onClick={() => {onCancelHander();}}>Cancel</button>
-            <button onClick={() => {onEditHandler(currentContactId);}}>Edit</button>
+            <button onClick={() => {onEditHandler(currentContactId, contact.values);}}>Edit</button>
           </div>
         );
         break;
