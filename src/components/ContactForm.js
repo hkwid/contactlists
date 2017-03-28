@@ -24,15 +24,27 @@ class ContactForm extends Component {
         </div>
         <div>
           <label htmlFor="phone">Phone:</label>
-          <Field name="phone" component="input" type="text" />
+          <Field
+            name="phone"
+            component="input"
+            type="text"
+          />
         </div>
         <div>
           <label htmlFor="address">Address:</label>
-          <Field name="address" component="input" type="text" />
+          <Field
+            name="address"
+            component="input"
+            type="text"
+          />
         </div>
         <div>
           <label htmlFor="email">Email:</label>
-          <Field name="email" component="input" type="text" />
+          <Field
+            name="email"
+            component="input"
+            type="email"
+          />
         </div>
       </form>
     );

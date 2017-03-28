@@ -14,7 +14,6 @@ class ContactListModal extends Component {
   }
 
   onDeleteHandler = (index) => {
-    console.log(index);
     this.props.deleteContact(index);
     this.props.closeModal();
   }
