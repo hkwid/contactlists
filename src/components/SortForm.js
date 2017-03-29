@@ -11,7 +11,7 @@ class SortForm extends Component {
         <div>
           <label>
             <Field
-              name="sort"
+              name="sortField"
               component="input"
               type="radio"
               value="firstName"
@@ -20,7 +20,7 @@ class SortForm extends Component {
           </label><br/>
           <label>
             <Field
-              name="sort"
+              name="sortField"
               component="input"
               type="radio"
               value="lastName"
@@ -29,7 +29,7 @@ class SortForm extends Component {
           </label><br/>
           <label>
             <Field
-              name="sort"
+              name="sortField"
               component="input"
               type="radio"
               value="phone"
@@ -38,7 +38,7 @@ class SortForm extends Component {
           </label><br/>
           <label>
             <Field
-              name="sort"
+              name="sortField"
               component="input"
               type="radio"
               value="address"
@@ -47,7 +47,7 @@ class SortForm extends Component {
           </label><br/>
           <label>
             <Field
-              name="sort"
+              name="sortField"
               component="input"
               type="radio"
               value="email"

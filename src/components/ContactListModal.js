@@ -19,7 +19,12 @@ class ContactListModal extends Component {
     this.props.closeModal();
   }
 
-  onCancelHander = () => {
+  onSortHandler = (fieldName) => {
+    this.props.sortContact(fieldName);
+    this.props.closeModal();
+  }
+
+  onCancelHandler = () => {
     this.props.closeModal();
   }
 
@@ -29,14 +34,16 @@ class ContactListModal extends Component {
       modalType,
       showModal,
       currentContactId,
-      contact
+      contact,
+      sortFiled,
     } = this.props;
 
     const {
-      onCancelHander,
+      onCancelHandler,
       onAddHandler,
       onEditHandler,
-      onDeleteHandler
+      onDeleteHandler,
+      onSortHandler
     } = this;
 
     let modalContent = '';
@@ -47,7 +54,7 @@ class ContactListModal extends Component {
         modalContent = (
           <div>
             <ContactForm />
-            <button onClick={() => {onCancelHander()}}>Cancel</button>
+            <button onClick={() => {onCancelHandler()}}>Cancel</button>
             <button onClick={() => {onAddHandler(contact.values)}}>Add</button>
           </div>
         );
@@ -57,7 +64,7 @@ class ContactListModal extends Component {
         modalContent = (
           <div>
             <ContactForm />
-            <button onClick={() => {onCancelHander();}}>Cancel</button>
+            <button onClick={() => {onCancelHandler();}}>Cancel</button>
             <button onClick={() => {onEditHandler(currentContactId, contact.values);}}>Edit</button>
           </div>
         );
@@ -68,7 +75,7 @@ class ContactListModal extends Component {
           <div>
             <p>Are you sure to delete this contact?</p>
             <p>{`${currentContact.firstName} ${currentContact.lastName}`}</p>
-            <button onClick={() => {onCancelHander();}}>Cancel</button>
+            <button onClick={() => {onCancelHandler();}}>Cancel</button>
             <button onClick={() => {onDeleteHandler(currentContactId);}}>Delete</button>
           </div>
         );
@@ -79,8 +86,8 @@ class ContactListModal extends Component {
           <div>
             <p>Sort by</p>
             <SortForm/>
-            <button onClick={() => {onCancelHander();}}>Cancel</button>
-            <button onClick={() => {onCancelHander();}}>Sort</button>
+            <button onClick={() => {onCancelHandler();}}>Cancel</button>
+            <button onClick={() => {onSortHandler(sortFiled.values.sortField)}}>Sort</button>
           </div>
         );
         break;

@@ -4,7 +4,8 @@ import App from '../components/App';
 import {
   addContact,
   editContact,
-  deleteContact
+  deleteContact,
+  sortContact
 } from '../redux/modules/contact';
 
 import {
@@ -28,6 +29,7 @@ function mapDispatchToProps(dispatch) {
     addContact: (contact) => dispatch(addContact(contact)),
     editContact: (index, contact) => dispatch(editContact(index, contact)),
     deleteContact: (index) => dispatch(deleteContact(index)),
+    sortContact: (fieldName) => dispatch(sortContact(fieldName)),
     openModal: (modalType, index) => dispatch(openModal(modalType, index)),
     closeModal: () => dispatch(closeModal())
   }

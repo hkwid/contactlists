@@ -1,4 +1,5 @@
 import dummyContacts from '../../../dummy_contact.json';
+import getSortedObjectArray from '../../utils/objectArraySort';
 
 //Actions
 const ADD_CONTACT = 'ADD_CONTACT';
@@ -7,7 +8,7 @@ const DELETE_CONTACT = 'DELETE_CONTACT';
 const SORT_CONTACT = 'SORT_CONTACT';
 
 // Initial State
-const initialState = {
+export const initialState = {
   contactLists: dummyContacts
 };
 
@@ -78,7 +79,10 @@ export default function reducer(state = initialState, action){
   case SORT_CONTACT:
     return Object.assign(
       {},
-      state
+      state,
+      {
+        contactLists: getSortedObjectArray(state.contactLists, action.fieldName, 'asc')
+      }
     );
   default:
     return state;

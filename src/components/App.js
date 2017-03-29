@@ -11,11 +11,13 @@ class App extends Component {
       showModal,
       currentContactId,
       contact,
+      sortFiled,
       openModal,
       closeModal,
       addContact,
       editContact,
-      deleteContact
+      deleteContact,
+      sortContact
     } = this.props;
 
     return (
@@ -30,10 +32,12 @@ class App extends Component {
           showModal={showModal}
           currentContactId={currentContactId}
           contact={contact}
+          sortFiled={sortFiled}
           closeModal={closeModal}
           addContact={addContact}
           editContact={editContact}
           deleteContact={deleteContact}
+          sortContact={sortContact}
         />
       </div>
     );
