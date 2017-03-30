@@ -1,51 +1,49 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
+import FieldForm from './FieldInput';
+import * as validate from '../utils/validate';
+
 class ContactForm extends Component {
 
   render() {
     return (
       <form>
-        <div>
-          <label htmlFor="firstName">First Name:</label>
-          <Field
-            name="firstName"
-            component="input"
-            type="text"
-          />
-        </div>
-        <div>
-          <label htmlFor="lastName">Last Name:</label>
-          <Field
-            name="lastName"
-            component="input"
-            type="text"
-          />
-        </div>
-        <div>
-          <label htmlFor="phone">Phone:</label>
-          <Field
-            name="phone"
-            component="input"
-            type="text"
-          />
-        </div>
-        <div>
-          <label htmlFor="address">Address:</label>
-          <Field
-            name="address"
-            component="input"
-            type="text"
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <Field
-            name="email"
-            component="input"
-            type="email"
-          />
-        </div>
+        <Field
+          name="firstName"
+          component={FieldForm}
+          type="text"
+          label="First Name "
+          validate={validate.required}
+        />
+        <Field
+          name="lastName"
+          component={FieldForm}
+          type="text"
+          label="Last Name "
+          validate={validate.required}
+        />
+        <Field
+          name="phone"
+          component={FieldForm}
+          type="text"
+          label="Phone Number"
+          validate={validate.required}
+        />
+        <Field
+          name="address"
+          component={FieldForm}
+          type="text"
+          label="Address"
+          validate={validate.required}
+        />
+        <Field
+          name="email"
+          component={FieldForm}
+          type="email"
+          label="Email"
+          validate={[ validate.required, validate.email ]}
+        />
       </form>
     );
   }

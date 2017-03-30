@@ -1,0 +1,11 @@
+.warning {
+  background-color: yellow;
+  padding-left: 10px;
+  font-size: 0.8em;
+}
+
+.error {
+  color: red;
+  padding-left: 10px;
+  font-size: 0.8em;
+}
