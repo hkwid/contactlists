@@ -64,8 +64,8 @@ class ContactListModal extends Component {
         modalContent = (
           <div>
             <ContactForm />
-            <button onClick={() => {onCancelHandler();}}>Cancel</button>
-            <button onClick={() => {onEditHandler(currentContactId, contact.values);}}>Edit</button>
+            <button onClick={() => {onCancelHandler()}}>Cancel</button>
+            <button onClick={() => {onEditHandler(currentContactId, contact.values)}}>Edit</button>
           </div>
         );
         break;
@@ -75,8 +75,8 @@ class ContactListModal extends Component {
           <div>
             <p>Are you sure to delete this contact?</p>
             <p>{`${currentContact.firstName} ${currentContact.lastName}`}</p>
-            <button onClick={() => {onCancelHandler();}}>Cancel</button>
-            <button onClick={() => {onDeleteHandler(currentContactId);}}>Delete</button>
+            <button onClick={() => {onCancelHandler()}}>Cancel</button>
+            <button onClick={() => {onDeleteHandler(currentContactId)}}>Delete</button>
           </div>
         );
         break;
@@ -86,7 +86,7 @@ class ContactListModal extends Component {
           <div>
             <p>Sort by</p>
             <SortForm/>
-            <button onClick={() => {onCancelHandler();}}>Cancel</button>
+            <button onClick={() => {onCancelHandler()}}>Cancel</button>
             <button onClick={() => {onSortHandler(sortFiled.values.sortField)}}>Sort</button>
           </div>
         );
