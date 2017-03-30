@@ -9,8 +9,8 @@ class ContactListModal extends Component {
     this.props.closeModal();
   }
 
-  onEditHandler = (contact, index) => {
-    this.props.EditContact(contact);
+  onEditHandler = (index, contact) => {
+    this.props.editContact(index, contact);
     this.props.closeModal();
   }
 

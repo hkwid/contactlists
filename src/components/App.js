@@ -14,6 +14,7 @@ class App extends Component {
       sortFiled,
       openModal,
       closeModal,
+      loadData,
       addContact,
       editContact,
       deleteContact,
@@ -24,7 +25,9 @@ class App extends Component {
       <div className="App">
         <ContactList
           contactLists={contactLists}
+          currentContactId={currentContactId}
           openModal={openModal}
+          loadData={loadData}
         />
         <ContactListModal
           contactLists={contactLists}

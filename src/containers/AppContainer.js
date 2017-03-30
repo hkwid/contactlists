@@ -10,7 +10,8 @@ import {
 
 import {
   openModal,
-  closeModal
+  closeModal,
+  loadData
 } from '../redux/modules/modal';
 
 function mapStateToProps(state) {
@@ -31,7 +32,8 @@ function mapDispatchToProps(dispatch) {
     deleteContact: (index) => dispatch(deleteContact(index)),
     sortContact: (fieldName) => dispatch(sortContact(fieldName)),
     openModal: (modalType, index) => dispatch(openModal(modalType, index)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    loadData: (data) => dispatch(loadData(data))
   }
 }
 

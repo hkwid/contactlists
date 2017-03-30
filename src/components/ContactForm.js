@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 
 import FieldForm from './FieldInput';
+import { loadData } from '../redux/modules/modal';
 import * as validate from '../utils/validate';
 
 class ContactForm extends Component {
@@ -42,7 +44,7 @@ class ContactForm extends Component {
           component={FieldForm}
           type="email"
           label="Email"
-          validate={[ validate.required, validate.email ]}
+          validate={validate.email}
         />
       </form>
     );
@@ -53,5 +55,12 @@ class ContactForm extends Component {
 ContactForm = reduxForm({
   form: 'contact'
 })(ContactForm);
+
+ContactForm = connect(
+  state => ({
+    initialValues: state.modal.data
+  }),
+  { load: loadData }
+)(ContactForm);
 
 export default ContactForm;

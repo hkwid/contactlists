@@ -2,9 +2,34 @@ import React, { Component } from 'react';
 import './ContactList.css';
 
 class ContactList extends Component {
+  onAddHandler = () => {
+    this.props.openModal('add');
+    this.props.loadData({});
+  }
+
+  onEditHandler = (index) => {
+    this.props.openModal('edit', index);
+    const currentContact = this.props.contactLists[index];
+    this.props.loadData(currentContact);
+  }
+
+  onDeleteHandler = (index) => {
+    this.props.openModal('delete', index);
+  }
+
+  onSortHandler = () => {
+    this.props.openModal('sort');
+  }
 
   render() {
     const { contactLists, openModal } = this.props;
+    const {
+      onAddHandler,
+      onEditHandler,
+      onDeleteHandler,
+      onSortHandler
+    } = this;
+
 
     return (
       <div className="ContactListWrap">
@@ -17,10 +42,10 @@ class ContactList extends Component {
               <th>Address</th>
               <th>Email</th>
               <th>
-                <button type="button" onClick={() => openModal('add')}>Add</button>
+                <button type="button" onClick={onAddHandler}>Add</button>
               </th>
               <th>
-                <button type="button" onClick={() => openModal('sort')}>Sort</button>
+                <button type="button" onClick={onSortHandler}>Sort</button>
               </th>
             </tr>
           </thead>
@@ -32,8 +57,8 @@ class ContactList extends Component {
                 <td>{contact.phone}</td>
                 <td>{contact.address}</td>
                 <td>{contact.email}</td>
-                <td><button type="button" onClick={() => openModal('edit', index)}>Edit</button></td>
-                <td><button type="button" onClick={() => openModal('delete', index)}>Delete</button></td>
+                <td><button type="button" onClick={() => { onEditHandler(index)}}>Edit</button></td>
+                <td><button type="button" onClick={() => {onDeleteHandler(index)}}>Delete</button></td>
               </tr>
             )}
           </tbody>
